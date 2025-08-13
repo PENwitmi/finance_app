@@ -28,13 +28,43 @@ React + Tailwind CSS + IndexedDBを使用し、ブラウザ上で動作します
 - **メモリ**: 4GB以上
 
 ## ⚡ クイックスタート
+
+### 📥 ダウンロード
 ```bash
-# Node.js v16以上が必要です
 git clone https://github.com/PENwitmi/finance_app.git
 cd finance_app
-npm install
-npm run dev
 ```
+
+### 🚀 起動方法（OS別）
+
+#### 🍎 **macOS / Linux**
+```bash
+# 最も簡単な方法
+./start.command  # ダブルクリックでもOK
+# → 自動でセットアップして起動します（初回は数分かかります）
+```
+
+#### 🪟 **Windows**
+```bash
+# 方法1: バッチファイル（ダブルクリック）
+start.bat
+
+# 方法2: PowerShellスクリプト
+start.ps1
+
+# 方法3: 手動実行
+npm install    # 初回のみ必要
+npm run dev    # 開発サーバー起動
+```
+
+#### 📱 **全OS共通（手動起動）**
+```bash
+npm install    # 初回のみ：依存パッケージのインストール
+npm run dev    # 開発サーバーを起動
+```
+
+> 💡 **ヒント**: macOSでは`start.command`が自動でセットアップを行います！
+
 詳細な環境要件は [REQUIREMENTS.md](REQUIREMENTS.md) を参照してください。
 
 ## 機能
@@ -53,19 +83,34 @@ npm run dev
 - ✅ データのローカル保存（IndexedDB）
 - ✅ JSONエクスポート/インポート
 
-## 起動方法
+## 起動方法（詳細）
 
-### 🟢 最も簡単な方法（推奨）
-1. Finderで `bookkeeping-app` フォルダを開く
+### 🟢 macOS / Linux - ワンクリック起動
+1. Finderで `finance_app` フォルダを開く
 2. **`start.command`** をダブルクリック
-3. 自動的にブラウザが開きます
-4. 終了時はターミナルで `Control + C`
+3. 初回は自動でセットアップ（npm install）が実行されます
+4. ブラウザが自動的に開きます
+5. 終了時はターミナルで `Control + C`
 
-### その他の起動方法
+### 🔵 Windows - 起動方法
+#### 方法A: バッチファイル（推奨）
+1. エクスプローラーで `finance_app` フォルダを開く
+2. **`start.bat`** をダブルクリック
+3. 初回は自動でセットアップが実行されます
+4. ブラウザで http://localhost:3000 を開く
+
+#### 方法B: 手動起動
+1. コマンドプロンプトまたはPowerShellを開く
+2. `finance_app`フォルダに移動
+3. `npm install`（初回のみ）
+4. `npm run dev`
+5. ブラウザで http://localhost:3000 を開く
+
+### その他のデプロイ方法
 詳細は [docs/deployment-guide.md](docs/deployment-guide.md) を参照してください：
-- 開発サーバーでの起動
-- GitHub Pagesへのデプロイ
-- Vercelでのホスティング
+- GitHub Pagesへのデプロイ（無料・公開）
+- Vercelでのホスティング（無料・高速）
+- 本番用ビルド（build.command）
 
 ## 使い方
 

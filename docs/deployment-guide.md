@@ -1,23 +1,39 @@
 # 起動・デプロイ方法ガイド
 
-## 🟢 方法1: ワンクリック起動（推奨）
+## 🟢 方法1: ワンクリック起動（macOS/Linux）
 
-### Macでの使い方
-1. Finderで `bookkeeping-app` フォルダを開く
+### 自動セットアップ機能付き
+1. `finance_app` フォルダを開く
 2. **`start.command`** をダブルクリック
-3. 自動的にブラウザが開きます
-4. 終了時はターミナルで `Control + C`
+3. 初回は自動的に以下を実行：
+   - Node.jsの確認
+   - 依存パッケージのインストール（npm install）
+   - 開発サーバーの起動
+4. ブラウザが自動的に開きます
+5. 終了時はターミナルで `Control + C`
+
+**特徴**：
+- ✅ 初回セットアップ自動化
+- ✅ 最新のコードが常に反映される
+- ✅ ホットリロード対応
 
 ---
 
-## 🔵 方法2: 開発モード
+## 🔵 方法2: 手動起動（全OS対応）
 
-### コマンドで起動
+### Windows / 手動実行の場合
 ```bash
-cd "/Users/nishimototakashi/claude code/finance/bookkeeping-app"
+# プロジェクトフォルダに移動
+cd finance_app
+
+# 初回のみ：依存パッケージをインストール
+npm install
+
+# 開発サーバーを起動
 npm run dev
 ```
-- メリット：コード変更が即座に反映される
+- ブラウザで http://localhost:3000 を開く
+- メリット：どのOSでも同じ方法で起動可能
 - デメリット：毎回コマンド実行が必要
 
 ---
@@ -26,13 +42,10 @@ npm run dev
 
 ### セットアップ手順
 
-1. **GitHubリポジトリ作成**
+1. **リポジトリの準備**
 ```bash
-cd "/Users/nishimototakashi/claude code/finance/bookkeeping-app"
-git init
-git add .
-git commit -m "Initial commit"
-gh repo create bookkeeping-app --public --source=. --remote=origin --push
+# すでにGitHubにプッシュ済みの場合はスキップ
+git remote -v  # リモートリポジトリを確認
 ```
 
 2. **GitHub Pages用の設定追加**
@@ -40,7 +53,7 @@ vite.config.jsを編集：
 ```javascript
 export default defineConfig({
   plugins: [react()],
-  base: '/bookkeeping-app/',  // この行を追加
+  base: '/finance_app/',  // リポジトリ名に合わせて設定
   // ...
 })
 ```
@@ -61,7 +74,7 @@ npm run deploy
 
 5. **アクセス**
 ```
-https://[GitHubユーザー名].github.io/bookkeeping-app/
+https://[GitHubユーザー名].github.io/finance_app/
 ```
 
 ### GitHub Pagesのメリット
