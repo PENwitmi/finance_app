@@ -5,6 +5,23 @@
 React + Tailwind CSS + IndexedDBを使用し、ブラウザ上で動作します。  
 個人事業主向けに「事業主借」「事業主貸」の勘定科目も含まれています。
 
+### 必要な環境
+- **Node.js**: v16以上（推奨 v18 LTS）
+- **npm**: v7以上（Node.js付属）
+- **ブラウザ**: Chrome/Safari/Firefox/Edge の最新版
+- **OS**: Windows 10/11、macOS 10.15+、Linux
+- **メモリ**: 4GB以上
+
+## ⚡ クイックスタート
+```bash
+# Node.js v16以上が必要です
+git clone https://github.com/PENwitmi/finance_app.git
+cd finance_app
+npm install
+npm run dev
+```
+詳細な環境要件は [REQUIREMENTS.md](REQUIREMENTS.md) を参照してください。
+
 ## 機能
 - ✅ **🆕 3つの入力モード** - 支出/収入/詳細を切り替え可能
   - 💸 支出モード：経費入力に特化（事業主借を自動設定）
